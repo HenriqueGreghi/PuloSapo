@@ -14,11 +14,17 @@ namespace PulaSapo
             bool WIN = true;
             Console.Write("Entre com as alturas dos canos : ");
             string[] Cano = Console.ReadLine().Split(' ');
-            int[] Canos = Array.ConvertAll(Cano, int.Parse);
+            int[] Canos = new int[numeroCanos];
+            
+             
 
+            for (int i = 0; i < numeroCanos; i++)
+            {
+               Canos[i] = int.Parse(Cano[i]);
+            }
             for (int i = 0; i< (numeroCanos - 1); i++)
             {
-                if ((Canos[i] - Canos[i+1]) < (- pulos))
+                if ((Canos[i] - Canos[i+1]) < (-pulos))
                 {
                     WIN = false;
                 }
@@ -27,7 +33,7 @@ namespace PulaSapo
                     WIN = false;
                 }
             }
-            if (WIN)
+            if (WIN == true)
             {
                 Console.WriteLine("YOU WIN");
             }
